@@ -1,0 +1,7 @@
+step 1: tar -czvf n8n-data-backup.tar.gz _data
+step 2: from local machine use : scp your-user@your-vps-ip:/var/lib/docker/volumes/n8n_data/n8n-data-backup.tar.gz ~/Downloads/
+step 3: for extraction into the current system .n8n folder: tar -xzvf ~/Downloads/n8n-data-backup.tar.gz -C ~/.n8n --strip-components=1
+
+if you want to copy this backup to ec2 instance:
+step 1: scp ~/Downloads/n8n-data-backup.tar.gz ec2-user@<your-ec2-public-ip>:~/
+step 2:sudo tar -xzvf n8n-data-backup.tar.gz -C /var/lib/docker/volumes/n8n_data/_data --strip-components=1
